@@ -715,6 +715,10 @@ footer {
 
 /* Responsive */
 /* Responsive & Mobile Menu */
+.close-menu {
+    display: none;
+}
+
 @media (max-width: 900px) {
 
     /* Top Navigation Mobile */

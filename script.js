@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Load Header and Footer
-    loadComponent('header', 'header.html');
-    loadComponent('footer', 'footer.html');
+    // loadComponent('header', 'header.html');
+    // loadComponent('footer', 'footer.html');
 
     function setActiveLink() {
         const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -118,15 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Header Scroll Effect ---
     // --- Header Scroll Effect ---
     const header = document.getElementById('header');
-    console.log('Header element:', header); // Debug log
+    // console.log('Header element:', header); // Debug log
 
     function toggleHeaderScroll() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
-            console.log('Added scrolled class'); // Debug log
+            // console.log('Added scrolled class'); // Debug log
         } else {
             header.classList.remove('scrolled');
-            console.log('Removed scrolled class'); // Debug log
+            // console.log('Removed scrolled class'); // Debug log
         }
     }
 
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleHeaderScroll();
         window.addEventListener('scroll', toggleHeaderScroll);
     } else {
-        console.error('Header not found!');
+        // console.error('Header not found!');
     }
 
 
