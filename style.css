@@ -56,7 +56,12 @@ a {
 }
 
 .imga {
-    size: 30%
+    max-height: 55px;
+    transition: max-height 0.3s ease;
+}
+
+header.scrolled .imga {
+    max-height: 45px;
 }
 
 img {
@@ -122,8 +127,9 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Thoda dark background as requested */
+    /* background: rgba(0, 0, 0, 0.3); */
+    border-bottom: 1px solid rgba(217, 131, 131, 0.1);
     padding: 1.5rem 0;
     transition: all 0.4s ease;
 }
@@ -145,7 +151,7 @@ header.scrolled .nav-list a:hover {
 }
 
 header.scrolled .logo img {
-    height: 50px;
+    height: 45px;
 }
 
 .header-container {
@@ -160,7 +166,8 @@ header.scrolled .logo img {
 }
 
 .logo img {
-    height: 70px;
+    height: 65px;
+    /* Reduced by 5px */
     /* Adjust based on logo aspect ratio */
     width: auto;
     transition: height 0.3s ease;
@@ -282,7 +289,7 @@ header.scrolled .logo img {
 
 .nav-link {
     font-size: 0.95rem;
-    color: var(--color-text-muted);
+    color: #e67e22;
 }
 
 .nav-link:hover {
@@ -322,12 +329,14 @@ header.scrolled .logo img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.7)),
+    /* Darkened background overlay (Lightened further v4) */
+    background-image: linear-gradient(rgba(62, 59, 59, 0.2), rgba(0, 0, 0, 0.1)),
         url("imgs/spices.png");
     background-size: cover;
     background-position: center;
     z-index: -1;
     transform: scale(1.05);
+
     animation: zoomOut 20s infinite alternate;
 }
 
@@ -352,6 +361,7 @@ header.scrolled .logo img {
     text-transform: uppercase;
     letter-spacing: 4px;
     color: var(--color-primary);
+    /* Keep primary accent */
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
@@ -359,7 +369,8 @@ header.scrolled .logo img {
 .hero-title {
     font-size: 4.5rem;
     margin-bottom: 1.5rem;
-    color: var(--color-text);
+    color: #ffffff;
+    /* White text for dark bg */
 }
 
 .hero-title em {
@@ -370,7 +381,8 @@ header.scrolled .logo img {
 .hero-desc {
     align-items: center;
     font-size: 1.2rem;
-    color: var(--color-text-muted);
+    color: #e0e0e0;
+    /* Light grey for desc */
     max-width: 600px;
     margin-bottom: 2.5rem;
 }
@@ -584,7 +596,7 @@ header.scrolled .logo img {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     /* 45% / 55% split */
-    gap: 5rem;
+    gap: 4rem;
     align-items: center;
     padding-top: 4rem;
 }
@@ -595,7 +607,7 @@ header.scrolled .logo img {
     /* Reduced from 3.5rem */
     font-family: var(--font-heading);
     margin-bottom: 2rem;
-    line-height: 1.1;
+    line-height: 1;
     color: var(--color-text);
 }
 

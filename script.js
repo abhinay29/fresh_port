@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Mobile Menu Toggle ---
     initMobileMenu();
+    initScrollEffect();
 
     // --- Homepage Slider Logic ---
     const track = document.querySelector('.slider-track');
