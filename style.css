@@ -624,6 +624,11 @@ header.scrolled .logo img {
     padding-bottom: 4rem;
 }
 
+/* Fix for Contact Page where contact section is the first element */
+main>.contact:first-child {
+    padding-top: 120px;
+}
+
 .contact-list {
     list-style: none;
     margin-top: 2rem;
@@ -643,9 +648,9 @@ header.scrolled .logo img {
 /* Premium Form Card */
 .contact-form {
     background: #ffffff;
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 05px 20px rgba(0, 0, 0, 0.08);
     /* Soft shadow */
     transition: transform 0.3s ease;
 }
@@ -855,11 +860,11 @@ footer {
 
     .nav-list {
         position: fixed;
-        top: 0;
+        top: 1%;
         right: -100%;
-        width: 80%;
+        width: 60%;
         /* Not full width to show context or 100% if cleaner */
-        height: 100vh;
+        height: 50vh;
         background: #ffffff;
         flex-direction: column;
         align-items: center;
@@ -874,8 +879,20 @@ footer {
         right: 0;
     }
 
-    .Hamburger {
+    .hamburger {
         display: block;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: var(--color-accent);
+        transition: all 0.3s ease;
+        border-radius: 2px;
     }
 
     .close-menu {
@@ -1081,5 +1098,15 @@ footer {
     /* Reduce Container Padding on Mobile */
     .container {
         padding: 0 0.5rem;
+    }
+
+    /* Reduce Contact Form Padding on Mobile */
+    .contact-form {
+        padding: 1.5rem 0.5rem;
+        /* Reduced left/right padding */
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        width: calc(100% + 1rem);
+        border-radius: 0;
     }
 }

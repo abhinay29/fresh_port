@@ -63,6 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            const closeBtn = document.querySelector('.close-menu');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navList.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+
             // Close menu when clicking a link
             const navLinks = navList.querySelectorAll('a');
             navLinks.forEach(link => {
