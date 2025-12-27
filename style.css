@@ -4,7 +4,7 @@
   --color-bg-alt: #f8f9fa;
   --color-text: #122437;
   --color-text-muted: #7f8c8d;
-  --color-primary: #27ae60;
+  --color-primary: #00ab48;
   /* Green */
   --color-primary-hover: #219150;
   --color-accent: #e67e22;
@@ -109,6 +109,18 @@ img {
 .btn-outline:hover {
   background-color: #fff;
   color: var(--color-text);
+  transform: translateY(-2px);
+}
+
+.btn-outline-green {
+  background-color: transparent;
+  border-color: #00ab48;
+  color: #00ab48;
+  margin-left: 1rem;
+}
+.btn-outline-green:hover {
+  background-color: #00ab48;
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -403,7 +415,7 @@ header.scrolled .logo img {
 
 /* Page Header (New) */
 .page-header {
-  padding-top: 100px;
+  padding-top: 140px;
   padding-bottom: 30px;
   background: var(--color-bg-alt);
   text-align: center;
@@ -458,26 +470,18 @@ header.scrolled .logo img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
 }
 
 .about-image {
-  position: relative;
   border-radius: var(--border-radius);
-  overflow: hidden;
-}
-
-.about-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(39, 174, 96, 0.2), transparent);
 }
 
 .about-image img {
+  position: sticky;
+  top: 120px;
+  border-radius: var(--border-radius);
+  width: 100%;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
@@ -511,6 +515,127 @@ header.scrolled .logo img {
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Mission & Vision Cards */
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.mission-vision-card {
+  position: relative;
+  height: 100%;
+}
+
+.mv-card-inner {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 3rem;
+  height: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  border: 1px solid rgba(39, 174, 96, 0.1);
+}
+
+.mv-card-inner:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  border-color: rgba(39, 174, 96, 0.3);
+}
+
+.mv-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.mv-icon-wrapper svg {
+  width: 36px;
+  height: 36px;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.mission-icon {
+  background: linear-gradient(135deg, #27ae60 0%, #219150 100%);
+  box-shadow: 0 8px 24px rgba(39, 174, 96, 0.3);
+}
+
+.vision-icon {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  box-shadow: 0 8px 24px rgba(230, 126, 34, 0.3);
+}
+
+.mv-card-inner:hover .mv-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.mv-content {
+  position: relative;
+  z-index: 2;
+}
+
+.mv-content .section-tag {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.4rem 1rem;
+  background: rgba(39, 174, 96, 0.1);
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.mv-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.mv-description {
+  color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.mv-description:last-child {
+  margin-bottom: 0;
+}
+
+.mv-decorative-element {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(39, 174, 96, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transition: all 0.6s ease;
+}
+
+.mv-card-inner:hover .mv-decorative-element {
+  transform: scale(1.5);
+  opacity: 0.8;
 }
 
 /* Products */
@@ -855,6 +980,7 @@ footer {
   .process-grid,
   .stats-grid,
   .about-grid,
+  .mission-vision-grid,
   .contact-container,
   .footer-content {
     grid-template-columns: 1fr;
@@ -866,11 +992,10 @@ footer {
   .about-grid {
     display: flex;
     flex-direction: column-reverse;
-    /* Image on top usually, but let's keep text first or standard flow */
+    position: relative;
     gap: 3rem;
   }
 
-  /* Product Grid - 1 Column for Mobile to avoid overflow */
   .product-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -906,7 +1031,7 @@ footer {
   }
 
   .nav-list.active {
-    right: 0;
+    right: -5%;
   }
 
   .nav-list li {
@@ -975,6 +1100,30 @@ footer {
   .hero {
     padding-top: 100px;
     text-align: center;
+  }
+
+  /* Mission & Vision Mobile */
+  .mv-card-inner {
+    padding: 2rem 1.5rem;
+  }
+
+  .mv-title {
+    font-size: 1.8rem;
+  }
+
+  .mv-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+  }
+
+  .mv-icon-wrapper svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mv-description {
+    font-size: 1rem;
   }
 
   /* Footer */
@@ -1046,6 +1195,13 @@ footer {
 }
 
 @media (max-width: 768px) {
+  header {
+    width: 95%;
+  }
+
+  header.scrolled .logo img {
+    height: 40px;
+  }
   /* Layout Adjustments */
   .section-title {
     font-size: 2.5rem;
