@@ -130,7 +130,7 @@ header {
   margin: 15px auto;
   width: 65%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 60px;
   padding: 1rem 0;
@@ -203,13 +203,13 @@ header.scrolled .logo img {
 }
 
 .slide-content {
-  background: var(--color-bg-alt);
+  background: #fff;
   border-radius: var(--border-radius);
   overflow: hidden;
   max-width: 800px;
   width: 100%;
   display: flex;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 .slide-image {
@@ -295,10 +295,12 @@ header.scrolled .logo img {
 }
 
 .nav-link {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
   font-weight: 500;
   color: var(--color-text);
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .nav-link:hover,
@@ -433,6 +435,7 @@ header.scrolled .logo img {
   color: var(--color-primary);
   margin-bottom: 1rem;
   font-family: var(--font-body);
+  font-weight: 600;
 }
 
 .section-title {
@@ -568,8 +571,16 @@ header.scrolled .logo img {
 
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+  /* margin-top: 2rem; */
+}
+
+.process-grid.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.process-grid.col-3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .process-item {
@@ -588,19 +599,20 @@ header.scrolled .logo img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 auto 1.5rem;
 }
 
 .process-item h3 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .process-item p {
   color: var(--color-text-muted);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 /* Contact */
