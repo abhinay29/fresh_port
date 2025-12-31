@@ -1192,10 +1192,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  header {
-    width: 95%;
-  }
-
   header.scrolled .logo img {
     height: 40px;
   }
